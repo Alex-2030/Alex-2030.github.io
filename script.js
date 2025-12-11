@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navButtons = document.querySelectorAll('.nav-btn');
     const backButtons = document.querySelectorAll('.back-btn');
 
-    // STAR GENERATOR
+    // --- STAR GENERATOR ---
     function generateStarShadows(count) {
         let shadow = '';
         for(let i = 0; i < count; i++) {
-            shadow += `${Math.random() * 2000}px ${Math.random() * 2000}px #FFF, `;
+            shadow += `${Math.random() * 200}vw ${Math.random() * 200}vh #FFF, `;
         }
         return shadow.slice(0, -2);
     }
@@ -15,11 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const starLayer1 = document.querySelector('.stars');
     const starLayer2 = document.querySelector('.stars2');
     
+    // Check if elements exist before attempting to apply shadows
     if(starLayer1) starLayer1.style.boxShadow = generateStarShadows(700);
     if(starLayer2) starLayer2.style.boxShadow = generateStarShadows(200);
 
 
-    // WARP TRANSITION LOGIC
+    // --- WARP TRANSITION LOGIC ---
     function performTransition(targetViewId) {
         const currentView = document.querySelector('.active-view');
         const nextView = document.getElementById(targetViewId);
@@ -32,20 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fade out current view 
         currentView.classList.remove('active-view');
 
-        // Wait 800ms for the current view to zoom away 
-        setTimeout(() => {
-            // Bring in new view
-            nextView.classList.add('active-view');
-            
-            // Disengage warp speed
-            setTimeout(() => {
-                 body.classList.remove('warp-speed');
-            }, 500); 
+        currentView.addEventListener('transitionend', function handler() {
+            currentView.removeEventListener('transitionend', handler);
 
-        }, 800); 
+            // Bring in the new view
+            nextView.classList.add('active-view');
+
+            setTimeout(() => {
+                body.classList.remove('warp-speed');
+            }, 700); 
+
+        }, { once: true });
     }
 
-    // EVENT LISTENERS
+    // --- EVENT LISTENERS ---
     
     // Bridge Buttons
     navButtons.forEach(btn => {
