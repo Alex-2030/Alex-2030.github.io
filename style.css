@@ -224,14 +224,14 @@ h1 { font-size: 2.5rem; text-shadow: 0 0 10px var(--accent-cyan); }
 .comms-btn:hover { background: var(--accent-cyan); color: #000; }
 
 
-/* --- NEW: CV Download Button Styling --- */
+/* --- CV Download Button Styling --- */
 .cv-download-container {
     margin-top: 40px;
 }
 
 .cv-btn {
     background: var(--accent-yellow);
-    color: var(--bg-space); /* Dark text on bright button */
+    color: var(--bg-space);
     padding: 15px 40px;
     font-family: var(--font-tech);
     font-size: 1.1rem;

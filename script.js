@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navButtons = document.querySelectorAll('.nav-btn');
     const backButtons = document.querySelectorAll('.back-btn');
 
-    // 1. STAR GENERATOR
+    // STAR GENERATOR
     function generateStarShadows(count) {
         let shadow = '';
         for(let i = 0; i < count; i++) {
@@ -19,25 +19,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if(starLayer2) starLayer2.style.boxShadow = generateStarShadows(200);
 
 
-    // 2. WARP TRANSITION LOGIC
+    // WARP TRANSITION LOGIC
     function performTransition(targetViewId) {
         const currentView = document.querySelector('.active-view');
         const nextView = document.getElementById(targetViewId);
 
         if(!currentView || !nextView || currentView === nextView) return;
 
-        // A. Engage Warp Speed
+        // Engage Warp Speed
         body.classList.add('warp-speed');
 
-        // B. Fade out current view (fly away)
+        // Fade out current view 
         currentView.classList.remove('active-view');
 
-        // C. Wait 800ms for the current view to zoom away (Matches CSS transition time)
+        // Wait 800ms for the current view to zoom away 
         setTimeout(() => {
-            // D. Bring in new view
+            // Bring in new view
             nextView.classList.add('active-view');
             
-            // E. Disengage warp speed
+            // Disengage warp speed
             setTimeout(() => {
                  body.classList.remove('warp-speed');
             }, 500); 
@@ -45,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 800); 
     }
 
-    // 3. EVENT LISTENERS
+    // EVENT LISTENERS
     
-    // Bridge Buttons (Navigate to content)
+    // Bridge Buttons
     navButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const targetId = btn.getAttribute('data-target');
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Back Buttons (Return to bridge)
+    // Back Buttons
     backButtons.forEach(btn => {
         btn.addEventListener('click', () => {
            performTransition('main-nav');
