@@ -1,201 +1,139 @@
-<!-- @format -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Commander Ahmed Salama - Logbook</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Portfolio of Ahmed Salama, Computer and Communications Engineering student: machine learning, embedded systems and front-end projects." />
+    <meta name="theme-color" content="#05050a" />
+    <meta property="og:title" content="Commander Ahmed Salama - Logbook" />
+    <meta property="og:description" content="Computer and Communications Engineering student. Projects, certificates and contact." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alex-2030.github.io/" />
+    <meta property="og:image" content="https://alex-2030.github.io/Icon.png" />
     <link rel="icon" type="image/png" href="Icon.png" />
+    <link rel="apple-touch-icon" href="Icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;600&family=Orbitron:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div id="space-container">
-      <div class="stars"></div>
-      <div class="stars2"></div>
-    </div>
+    <canvas id="space" aria-hidden="true"></canvas>
 
-    <main id="main-nav" class="active-view">
-      <header>
-        <h1 class="glitch-text">AHMED SALAMA</h1>
-        <p class="subtitle">
-          Undergraduate Computer & Communication Engineering Student at
-          Alexandria National University
-        </p>
-      </header>
+    <main id="app">
+      <section id="home" class="view is-active" aria-labelledby="home-title">
+        <header>
+          <h1 id="home-title" tabindex="-1">AHMED SALAMA</h1>
+          <p class="subtitle">Undergraduate Computer &amp; Communication Engineering Student at Alexandria National University</p>
+        </header>
+        <nav class="warp-controls" aria-label="Sections">
+          <a class="nav-btn" href="#about">INITIATE: ABOUT PROTOCOL</a>
+          <a class="nav-btn" href="#skills">ENGAGE: SKILLS MATRIX</a>
+          <a class="nav-btn" href="#certificates">ACCESS: CERTIFICATES ARCHIVE</a>
+          <a class="nav-btn" href="#projects">VIEW: PROJECT LOGS</a>
+          <a class="nav-btn" href="#contact">OPEN: COMMS CHANNEL</a>
+        </nav>
+      </section>
 
-      <nav class="warp-controls">
-        <button class="nav-btn" data-target="about-section">
-          <span class="btn-text">INITIATE: ABOUT PROTOCOL</span>
-        </button>
-        <button class="nav-btn" data-target="skills-section">
-          <span class="btn-text">ENGAGE: SKILLS MATRIX</span>
-        </button>
-        <button class="nav-btn" data-target="certificates-section">
-          <span class="btn-text">ACCESS: CERTIFICATES ARCHIVE</span>
-        </button>
-        <button class="nav-btn" data-target="projects-section">
-          <span class="btn-text">VIEW: PROJECT LOGS</span>
-        </button>
-        <button class="nav-btn" data-target="contact-section">
-          <span class="btn-text">OPEN: COMMS CHANNEL</span>
-        </button>
-      </nav>
-    </main>
-
-    <section id="about-section" class="content-view">
-      <button class="back-btn">← RETURN TO BRIDGE</button>
-      <h2>// ABOUT PROTOCOL</h2>
-      <div class="content-body">
-        <p>
-          <strong>Log Stardate 2025.4 :</strong>I am a motivated Computer and
-          Communications Engineering student with a strong passion for Front-End
-          development, Machine Learning, Deep Learning and Cyber Security.
-          Experienced in building data-driven models, performing data
-          preprocessing, and applying supervised and unsupervised learning
-          techniques. Enthusiastic about exploring Artificial Intelligence, Deep
-          Learning, and creating interactive, user-friendly applications.
-        </p>
-        <p>
-          Organized, collaborative, and eager to apply academic knowledge to
-          real-world projects through internships and hands-on experience.
-        </p>
-
-        <div class="cv-download-container">
+      <section id="about" class="view" aria-labelledby="about-title" inert>
+        <a class="back-btn" href="#home">← RETURN TO BRIDGE</a>
+        <h2 id="about-title" tabindex="-1">// ABOUT PROTOCOL</h2>
+        <div class="content-body">
+          <p><strong>Log Stardate 2025.4:</strong> I am a motivated Computer and Communications Engineering student with a strong passion for Front-End development, Machine Learning, Deep Learning and Cyber Security. Experienced in building data-driven models, performing data preprocessing, and applying supervised and unsupervised learning techniques. Enthusiastic about exploring Artificial Intelligence and creating interactive, user-friendly applications.</p>
+          <p>Organized, collaborative, and eager to apply academic knowledge to real-world projects through internships and hands-on experience.</p>
           <a href="CV.pdf" download class="cv-btn">DOWNLOAD CV DATA FILE</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="skills-section" class="content-view">
-      <button class="back-btn">← RETURN TO BRIDGE</button>
-      <h2>// SKILLS MATRIX LOADING...</h2>
-      <div class="skills-grid">
-        <div class="skill-pod">Python</div>
-        <div class="skill-pod">Java</div>
-        <div class="skill-pod">C</div>
-        <div class="skill-pod">HTML</div>
-        <div class="skill-pod">CSS</div>
-        <div class="skill-pod">Machine Learning</div>
-        <div class="skill-pod">Deep Learning Fundamentals</div>
-        <div class="skill-pod">Linux</div>
-        <div class="skill-pod">Matlab</div>
-        <div class="skill-pod">Github</div>
-      </div>
-    </section>
+      <section id="skills" class="view" aria-labelledby="skills-title" inert>
+        <a class="back-btn" href="#home">← RETURN TO BRIDGE</a>
+        <h2 id="skills-title" tabindex="-1">// SKILLS MATRIX</h2>
+        <div class="skill-group"><h3>Languages</h3><ul class="skills-grid">
+          <li>Python</li><li>Java</li><li>C</li><li>MATLAB</li><li>SQL (MySQL)</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+        </ul></div>
+        <div class="skill-group"><h3>Machine learning</h3><ul class="skills-grid">
+          <li>Machine Learning</li><li>Deep Learning Fundamentals</li>
+        </ul></div>
+        <div class="skill-group"><h3>Systems &amp; tools</h3><ul class="skills-grid">
+          <li>Embedded Systems (AVR)</li><li>Flutter</li><li>Linux</li><li>Git &amp; GitHub</li><li>Cyber Security Fundamentals</li>
+        </ul></div>
+      </section>
 
-    <section id="certificates-section" class="content-view">
-      <button class="back-btn">← RETURN TO BRIDGE</button>
-      <h2>// CERTIFICATES ARCHIVE</h2>
-      <div class="archive-container">
-        <div class="cert-record">
-          <h3>MACHINE LEARNING AND AI</h3>
-          <p>Provider: ROUTE</p>
-          <p>Completion Date: 2025.10.15</p>
-          <!-- <a href="#" class="mission-link" target="_blank"
-            >&gt;&gt; VIEW CREDENTIAL</a
-          > -->
+      <section id="certificates" class="view" aria-labelledby="certs-title" inert>
+        <a class="back-btn" href="#home">← RETURN TO BRIDGE</a>
+        <h2 id="certs-title" tabindex="-1">// CERTIFICATES ARCHIVE</h2>
+        <div class="cards">
+          <article class="card cert">
+            <h3>MACHINE LEARNING AND AI</h3>
+            <p>Provider: ROUTE</p><p>Completion Date: 2025.10.15</p>
+            <a class="mission-link" href="https://linkjar.to/38ebe99a/" target="_blank" rel="noopener noreferrer">&gt;&gt; VIEW CREDENTIAL</a>
+          </article>
+          <article class="card cert">
+            <h3>Java SE: Programming I</h3>
+            <p>Provider: Skills Dynamix</p><p>Completion Date: 2024.07.14</p>
+            <a class="mission-link" href="https://linkjar.to/21f4d084/" target="_blank" rel="noopener noreferrer">&gt;&gt; VIEW CREDENTIAL</a>
+          </article>
+          <article class="card cert">
+            <h3>Java SE: Programming II</h3>
+            <p>Provider: Skills Dynamix</p><p>Completion Date: 2024.08.23</p>
+            <a class="mission-link" href="https://linkjar.to/1582ffd2/" target="_blank" rel="noopener noreferrer">&gt;&gt; VIEW CREDENTIAL</a>
+          </article>
+          <article class="card cert">
+            <h3>MySQL Fundamentals</h3>
+            <p>Provider: Skills Dynamix</p><p>Completion Date: 2024.09.27</p>
+            <a class="mission-link" href="https://linkjar.to/9717dcfa/" target="_blank" rel="noopener noreferrer">&gt;&gt; VIEW CREDENTIAL</a>
+          </article>
         </div>
+      </section>
 
-        <div class="cert-record">
-          <h3>Java SE: Programming I</h3>
-          <p>Provider: Skills Dynamix</p>
-          <p>Completion Date: 2024.07.14</p>
-          <!--<a href="#" class="mission-link" target="_blank"
-            >&gt;&gt;VIEW CREDENTIAL</a 
-          > -->
+      <section id="projects" class="view" aria-labelledby="projects-title" inert>
+        <a class="back-btn" href="#home">← RETURN TO BRIDGE</a>
+        <h2 id="projects-title" tabindex="-1">// PROJECT LOGS</h2>
+        <div class="cards">
+          <article class="card">
+            <h3><span class="dot"></span>AUTONOMOUS CAR PARKING SYSTEM</h3>
+            <p>A 4th-year Embedded Systems final project: an autonomous self-parking car (AVR/ATmega32A) with cross-platform remote control apps built in Flutter (Mobile &amp; Windows).</p>
+            <a class="mission-link" href="https://github.com/Alex-2030/Autonomous-car-parking" target="_blank" rel="noopener noreferrer">&gt;&gt; ACCESS DATA</a>
+          </article>
+          <article class="card">
+            <h3><span class="dot"></span>JAVA BANKING SYSTEM</h3>
+            <p>Fully functional banking system in Java with a Swing GUI: create accounts, deposit, withdraw, transfer, and review transaction history.</p>
+            <a class="mission-link" href="https://github.com/Alex-2030/Java_Banking_System" target="_blank" rel="noopener noreferrer">&gt;&gt; ACCESS DATA</a>
+          </article>
+          <article class="card">
+            <h3><span class="dot"></span>TWITTER TWEET ANALYZER</h3>
+            <p>Machine Learning tweet analyzer that classifies sentiment (97.8% validation accuracy with a Linear SVM), models topics, and visualizes trends.</p>
+            <a class="mission-link" href="https://github.com/Alex-2030/Twitter_Tweet_Analyzer" target="_blank" rel="noopener noreferrer">&gt;&gt; ACCESS DATA</a>
+          </article>
+          <article class="card">
+            <h3><span class="dot"></span>PORTFOLIO</h3>
+            <p>This interactive space-themed portfolio, made with HTML, CSS and JavaScript.</p>
+            <a class="mission-link" href="https://github.com/Alex-2030/Alex-2030.github.io" target="_blank" rel="noopener noreferrer">&gt;&gt; ACCESS DATA</a>
+          </article>
+          <article class="card">
+            <h3><span class="dot"></span>YAARANY</h3>
+            <p>College team project, contributed as a team member.</p>
+            <a class="mission-link" href="https://github.com/MarwanWahidMohamed/yaraaney" target="_blank" rel="noopener noreferrer">&gt;&gt; ACCESS DATA</a>
+          </article>
         </div>
+      </section>
 
-        <div class="cert-record">
-          <h3>Java SE: Programming II</h3>
-          <p>Provider: Skills Dynamix</p>
-          <p>Completion Date: 2024.08.23</p>
-          <!--<a href="#" class="mission-link" target="_blank"
-            >&gt;&gt; VIEW CREDENTIAL</a 
-          > -->
-        </div>
-
-        <div class="cert-record">
-          <h3>MySQL Fundamentals</h3>
-          <p>Provider: Skills Dynamix</p>
-          <p>Completion Date: 2024.09.27</p>
-          <!-- <a href="#" class="mission-link" target="_blank"
-            >&gt;&gt; VIEW CREDENTIAL</a
-          > -->
-        </div>
-      </div>
-    </section>
-
-    <section id="projects-section" class="content-view">
-      <button class="back-btn">← RETURN TO BRIDGE</button>
-      <h2>// PROJECTS LOGS</h2>
-      <div class="projects-container">
-        <div class="project-card">
-          <h3>
-            <span class="status-indicator"></span> AUTONOMOUS CAR PARKING SYSTEM
-          </h3>
-          <p>
-            A 4th-Year Embedded Systems Final Project featuring an autonomous self-parking car (AVR/Atmega32A) and cross-platform remote control applications built in Flutter (Mobile & Windows).
-          </p>
-          <a href="https://github.com/Alex-2030/Autonomous-car-parking" target="_blank" class="mission-link">&gt;&gt; ACCESS DATA</a>
-        </div>
-        <div class="project-card">
-          <h3>
-            <span class="status-indicator"></span> SIMPLE JAVA BANKING SYSTEM
-          </h3>
-          <p>
-            Fully functional banking system in Java with a Swing GUI. Allows
-            users to create accounts, perform transactions, and view balances.
-          </p>
-          <a href="#" class="mission-link">&gt;&gt; ACCESS DATA</a>
-        </div>
-        <div class="project-card">
-          <h3><span class="status-indicator"></span> Twitter Tweet Analyzer</h3>
-          <p>
-            Twitter data analyzer using Machine Learning and Deep Learning
-            techniques to classify sentiment, extract insights, and visualize
-            trends.
-          </p>
-          <a href="#" class="mission-link">&gt;&gt; ACCESS DATA</a>
-        </div>
-        <div class="project-card">
-          <h3><span class="status-indicator"></span> PORTFOLIO V1</h3>
-          <p>
-            An Interactive space themed portfolio made using HTML,CSS and JS.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact-section" class="content-view">
-      <button class="back-btn">← RETURN TO BRIDGE</button>
-      <h2>// COMMS CHANNEL OPEN</h2>
-      <div class="comms-interface">
-        <p class="blink">AWAITING TRANSMISSION...</p>
-        <div class="comms-grid">
-          <a href="mailto:ahmedsal760@gmail.com" class="comms-btn"
-            >SEND ENCRYPTED EMAIL</a
-          >
-          <a
-            href="https://www.linkedin.com/in/ahmed-salama-708866393"
-            target="_blank"
-            class="comms-btn"
-            >LINKEDIN UPLINK</a
-          >
-          <a
-            href="https://github.com/Alex-2030"
-            target="_blank"
-            class="comms-btn"
-            >GITHUB PAGE</a
-          >
-        </div>
-        <div class="transmission-box">
+      <section id="contact" class="view" aria-labelledby="contact-title" inert>
+        <a class="back-btn" href="#home">← RETURN TO BRIDGE</a>
+        <h2 id="contact-title" tabindex="-1">// COMMS CHANNEL OPEN</h2>
+        <div class="comms">
+          <p class="blink">AWAITING TRANSMISSION...</p>
+          <div class="comms-grid">
+            <a class="comms-btn" href="mailto:ahmedsal760@gmail.com">SEND ENCRYPTED EMAIL</a>
+            <a class="comms-btn" href="https://www.linkedin.com/in/ahmed-salama-708866393" target="_blank" rel="noopener noreferrer">LINKEDIN UPLINK</a>
+            <a class="comms-btn" href="https://github.com/Alex-2030" target="_blank" rel="noopener noreferrer">GITHUB PAGE</a>
+          </div>
           <p>Status: Online</p>
           <p>Location: Earth Sector</p>
         </div>
-      </div>
-    </section>
-
-    <script src="script.js"></script>
+      </section>
+    </main>
   </body>
 </html>
